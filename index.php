@@ -4,8 +4,8 @@
 	class ComputeTime {
 		const v = 150000; // половина скорости света в ваккуме
 		const tobr = 100; // время обработки информационного запроса сервером
-		const npw = 100; // количество пактов в сообщении на запись
-		const npr = 100; // количество пактов в сообщении на чтение
+		const npw = 100; // количество пакетов в сообщении на запись
+		const npr = 100; // количество пакетов в сообщении на чтение
 		private $n, $nw, $nr, $sr;
 		private $nwc = array();
 		private $nrc = array();
@@ -69,21 +69,10 @@
 			}
 			return $maxTime;
 		}
-/*
-		public function printClass(){
-			/*print_r($this->nwc);
-			echo "<br>";
-			print_r($this->nrc);
-			echo "<br>";
-			echo "N = ".$this->n."<br>Nw = ".$this->nw."<br>Nr=".$this->nr."<br>";
-			$sum = self::computeWrite() + self::computeRead();
-			echo "Tw = ".self::computeWrite()."<br>Tr = ".self::computeRead()."<br>Tsum = ".$sum;
-		}*/
 
 	}
 	$tr = 0;
 	$tw = 0;
-	$ts = 0;
 	for($i=0; $i<=20000; $i++){
 		$f = new ComputeTime("input.txt");
 		$tr += $f->computeRead();
